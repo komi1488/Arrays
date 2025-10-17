@@ -28,6 +28,7 @@ int main() {
   //The size of the array is G
   int countArrayG;
   int precision = 2;
+  
   cout << "Enter the size of the array F: ";
   cin  >> countArrayF;
   cout << "Enter the size of the array G: ";
@@ -62,6 +63,7 @@ int main() {
        << "The average of the negative elements of the G array: "   << calculateAverage(G, countArrayG) << endl;
   return 0;
 }
+
 
 
 
