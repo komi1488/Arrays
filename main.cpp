@@ -7,13 +7,13 @@
 #include <string>
 using namespace std;
 
-double calculateAverage(int arr[], int size) {
+double calculateAverage(int numberArray[], int arrayCount) {
   double sum = 0;
   int count = 0;
     
-  for(int array_index = 0; array_index < size; ++array_index) {
-    if(arr[array_index] < 0) {
-      sum += arr[array_index];
+  for (int arrayIndex = 0; arrayIndex < arrayCount; ++arrayIndex) {
+    if (numberArray[arrayIndex] < 0) {
+      sum += numberArray[arrayIndex];
       ++count;
     }
   }
@@ -22,42 +22,43 @@ double calculateAverage(int arr[], int size) {
 }
 int main() {
   //The size of the array is F
-  int k;
+  int countArrayF;
   //The size of the array is G
-  int n;
-  
+  int countArrayG;
+  int precision = 2;
   cout << "Enter the size of the array F: ";
-  cin  >> k;
+  cin  >> countArrayF;
   cout << "Enter the size of the array G: ";
-  cin  >> n;
+  cin  >> countArrayG;
   
-  int F[k];
-  int G[n];
+  int F[countArrayF];
+  int G[countArrayG];
   
-  cout << "Enter " << k << "Elements for the array F:" << endl;
-  for(int array_index = 0; array_index < k; ++array_index) {
-    cout << "Element F[" << array_index << "] = ";
-    cin  >> F[array_index];
+  cout << "Enter elements for the array F:" << endl;
+  for (int arrayIndex = 0; arrayIndex < countArrayF; ++arrayIndex) {
+    cout << "Element F[" << arrayIndex << "] = ";
+    cin  >> F[arrayIndex];
   }
-  for(int array_index = 0; array_index < n; ++array_index) {
-    cout << "Element G[" << array_index << "] = ";
-    cin  >> G[array_index];
+  cout << "Enter elements for the array G:" << endl;
+  for (int arrayIndex = 0; arrayIndex < countArrayG; ++arrayIndex) {
+    cout << "Element G[" << arrayIndex << "] = ";
+    cin  >> G[arrayIndex];
   }
-  cout << "\nEnter array:" << endl;
-    cout << "Array F: ";
-  for(int array_index = 0; array_index < k; ++array_index) {
-    cout << F[array_index] << " ";
+  cout << "\nEnter array:" << endl
+       << "Array F: ";
+  for (int arrayIndex = 0; arrayIndex < countArrayF; ++arrayIndex) {
+    cout << F[arrayIndex] << " ";
   }
   cout << endl;
     
   cout << "Array G: ";
-  for(int array_index = 0; array_index < n; ++array_index) {
-    cout << G[array_index] << " ";
+  for (int arrayIndex = 0; arrayIndex < countArrayG; ++arrayIndex) {
+    cout << G[arrayIndex] << " ";
   }
-  cout << endl;
-  cout << fixed << setprecision(2); 
-    cout << "\nThe average of the negative elements of the array F: " << calculateAverage(F, k) << endl
-         << "The average of the negative elements of the G array:   " << calculateAverage(G, n) << endl;
+  cout << fixed << setprecision(precision) << endl
+       << "\nThe average of the negative elements of the array F: " << calculateAverage(F, countArrayF) << endl
+       << "The average of the negative elements of the G array: "   << calculateAverage(G, countArrayG) << endl;
   return 0;
 }
+
 
