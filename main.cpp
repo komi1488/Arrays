@@ -17,8 +17,10 @@ double calculateAverage(int numberArray[], int arrayCount) {
       ++count;
     }
   }
-    
-  return (count > 0) ? sum / count : 0;
+  if (count > 0) {
+    return sum / count;
+}
+return 0;
 }
 int main() {
   //The size of the array is F
@@ -60,5 +62,6 @@ int main() {
        << "The average of the negative elements of the G array: "   << calculateAverage(G, countArrayG) << endl;
   return 0;
 }
+
 
 
